@@ -934,6 +934,7 @@
             <texturenofocus colordiffuse="panel_fg_70">osd/subs.png</texturenofocus>
             <onclick condition="Skin.HasSetting(OSDSubtitleSettings)">ActivateWindow(osdsubtitlesettings)</onclick>
             <onup condition="!Skin.HasSetting(OSDSubtitleSettings)">ActivateWindow(osdsubtitlesettings)</onup>
+            <ondown condition="!Skin.HasSetting(OSDSubtitleSettings)">ActivateWindow(SubtitleSearch)</ondown>
             <onclick condition="!Skin.HasSetting(OSDSubtitleSettings) + VideoPlayer.HasSubtitles">NextSubtitle</onclick>
             <onclick condition="!Skin.HasSetting(OSDSubtitleSettings) + !VideoPlayer.HasSubtitles">Close</onclick>
             <onclick condition="!Skin.HasSetting(OSDSubtitleSettings) + !VideoPlayer.HasSubtitles">ActivateWindow(SubtitleSearch)</onclick>
