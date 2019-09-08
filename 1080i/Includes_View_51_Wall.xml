@@ -192,7 +192,7 @@
                     <include content="Object_Geometric" condition="!$PARAM[circle]">
                         <param name="diffuse" value="$PARAM[diffuse]" />
                     </include>
-                    
+
                     <include>Object_DefaultIcon</include>
 
                     <include content="Object_Poster">
@@ -202,6 +202,18 @@
                         <param name="diffuse" value="$PARAM[diffuse]" />
                     </include>
 
+                    <control type="group">
+                        <visible>String.StartsWith(ListItem.FolderPath,pvr://)</visible>
+                        <height>$PARAM[icononlyheight]</height>
+                        <include>Object_DefaultIcon</include>
+                        <include content="Object_Poster">
+                            <param name="icon" value="$PARAM[icon]" />
+                            <param name="aspectratio" value="keep" />
+                            <param name="bordersize" value="60" />
+                            <param name="diffuse" value="$PARAM[diffuse]" />
+                        </include>
+                    </control>
+
                     <control type="image">
                         <bordersize>15</bordersize>
                         <texture colordiffuse="80000000">diffuse/circle.png</texture>
@@ -210,7 +222,7 @@
                     </control>
 
                     <include condition="!$PARAM[circle]">View_WatchedOverlay</include>
-                    
+
                     <control type="group">
                         <visible>!$PARAM[circle]</visible>
                         <visible>Control.HasFocus($PARAM[id]) | Control.HasFocus($PARAM[altid])</visible>
